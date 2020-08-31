@@ -2,3 +2,16 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body {
+    background-color: #969590;
+    }
+    body > .grid {
+    height: 100%;
+    }
+    .image {
+    margin-top: -100px;
+    }
+    .column {
+    max-width: 450px;
+    }

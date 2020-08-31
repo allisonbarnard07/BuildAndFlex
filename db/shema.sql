@@ -13,7 +13,6 @@ endWeight INT DEFAULT NULL,
 goal VARCHAR(150) NOT NULL,
 duration INT NOT NULL,
 miles INT NOT NULL,
-team VARCHAR(150) DEFAULT NULL,
 steps INT,
 PRIMARY KEY(id)
 );
@@ -27,7 +26,6 @@ startingWeight INT DEFAULT NULL,
 endWeight INT DEFAULT NULL,
 duration INT NOT NULL,
 miles INT NOT NULL,
-team VARCHAR(150) DEFAULT NULL,
 PRIMARY KEY(id)
 );
 
@@ -40,7 +38,6 @@ endWeight INT DEFAULT NULL,
 goal VARCHAR(150) NOT NULL,
 duration INT NOT NULL,
 miles INT NOT NULL,
-team VARCHAR(150) DEFAULT NULL,
 PRIMARY KEY(id)
 );
 
@@ -53,7 +50,6 @@ CREATE TABLE pullupChallenge (
     goal varchar (150) NOT NULL,
     duration INT NOT NULL,
     reps INT NOT NULL,
-    team VARCHAR (150) DEFAULT NULL,
     PRIMARY KEY (id)
 );
 
@@ -66,6 +62,5 @@ CREATE TABLE runningChallenge (
     goal varchar (150) NOT NULL,
     duration INT NOT NULL,
     miles INT NOT NULL,
-    team VARCHAR (150) DEFAULT NULL,
     PRIMARY KEY (id)
 )

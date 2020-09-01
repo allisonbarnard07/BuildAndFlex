@@ -5,12 +5,24 @@
 var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
-
-var swimChallenge = sequelize.define("swimChallenge", {
-    goal: Sequelize.STRING,
-    weightLoss: Sequelize.INTEGER,
-    duration: Sequelize.INTEGER,
-    miles: Sequelize.INTEGER
-  });  
-
-  swimChallenge.sync();
+module.exports = function(sequelize, DataTypes){
+    var swimChallenge = sequelize.define("swimChallenge", {
+        goal: {
+            type: DataTypes.STRING, 
+            allowNull: false, 
+        },
+        weightLoss: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },        
+        duration: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        miles: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+    });
+    return swimChallenge;        
+}

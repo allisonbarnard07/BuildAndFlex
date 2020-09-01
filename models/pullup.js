@@ -1,16 +1,21 @@
-// Dependencies
-// =============================================================
-
-// This may be confusing but here Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
-
-var pullupChallenge = sequelize.define("pullupChallenge", {
-    goal: Sequelize.STRING,
-    weightLoss: Sequelize.INTEGER,
-    duration: Sequelize.INTEGER,
-    reps: Sequelize.INTEGER
-  });  
-
-  pullupChallenge.sync();
+module.exports = function(sequelize, DataTypes){
+    var pullupChallenge = sequelize.define("pullupChallenge", {
+        goal: {
+            type: DataTypes.STRING, 
+            allowNull: false,
+        },
+        weightLoss: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },        
+        duration: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        reps: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+    });
+    return pullupChallenge;        
+}

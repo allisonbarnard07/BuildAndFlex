@@ -2,14 +2,16 @@
 var express = require("express");
 var db = require("../models");
 var passport = require("../config/passport");
-var router = express.Router();
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
+  // If the user has valid login credentials, send them to the allexercises page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
+      // how we redirect the user to allexercises route?
+      res.redirect("/allexercises");
     res.json(req.user);
+
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -21,7 +23,7 @@ module.exports = function(app) {
       password: req.body.password
     })
       .then(function() {
-        res.redirect(307, "/api/login");
+        res.redirect("/api/login");// here we want to redirect the user to redirect the allexercises roue once they sign up successfully so how can we do that? should we need to have /api/allexercises route?
       })
       .catch(function(err) {
         res.status(401).json(err);
@@ -30,6 +32,7 @@ module.exports = function(app) {
 
   // Route for logging user out
   app.get("/logout", function(req, res) {
+    
     req.logout();
     res.redirect("/");
   });

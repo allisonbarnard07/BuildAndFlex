@@ -29,7 +29,7 @@ module.exports = function(app) {
   app.get("/allexercises", isAuthenticated, function(req, res) {
     hbsObject.loggedin = true;
     hbsObject.title = "You are logged"
-    res.render("allexercises", hbsObject);
+    res.render("allexercises", hbsObject);// what will be the hbs object here? since
   });
   // // logout route
   // app.get("/logout", (req, res) => {

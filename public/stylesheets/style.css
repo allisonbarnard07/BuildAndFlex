@@ -18,7 +18,8 @@ body {
 
 .crd1,
 .crd2,
-.signUp {
+.signUp,
+.logIn {
     margin-top: 100px;
 }
 

@@ -36,7 +36,7 @@
             <p>Please fill in this form to creat an account.</p>
           </div>
           <div class="card-body">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" id="identicalForm" novalidate>
               <div class="form-row" style="margin-bottom: 1rem;">
                 <div class="row">
                   <div class="col-md-5">
@@ -69,15 +69,15 @@
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group" novalidate>
-                <label for="exampleInputPassword1">Password</label>
+                <label for="inputPasswordFirst">Password</label>
                 <input type="password" class="form-control" id="inputPasswordFirst" required>
                 <small id="passwordHelpInline" class="text-muted">
                     Must be 8-20 characters long.
                 </small>
               </div>
               <div class="form-group" novalidate>
-                <label for="exampleInputPassword1">Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" required>
+                <label for="inputPasswordSecond">Confirm Password</label>
+                <input type="password" class="form-control" id="inputPasswordSecond" required>
               </div>
               <div class="form-group form-check" novalidate>
                 <input type="checkbox" class="form-check-input" id="exampleCheck1" required>

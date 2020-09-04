@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var walkingChallenge = sequelize.define("walkingChallenge", {
+    var WalkingChallenge = sequelize.define("walkingChallenge", {
         goal: {
             type: DataTypes.STRING, 
             allowNull: false, 
@@ -20,7 +20,14 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.INTEGER
         }
     });
-
-    return walkingChallenge;        
+    WalkingChallenge.associate = function(models) {
+        // We're saying that a Post should belong to an Author
+        // A Post can't be created without an Author due to the foreign key constraint
+        WalkingChallenge.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
+      };
+    return WalkingChallenge;        
 }
-

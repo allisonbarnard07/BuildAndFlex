@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/style.css">
+    <title>Build & Flex!</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #292e29">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/signup">Sign Up</a>
+                <a class="nav-link" href="/allexercises">All Challenges</a>
+            </div>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <header>
+            <h1>Walking Challenge</h1>
+        </header>
+        <div class="ui container exercise">
+            <div class="ui raised card m-auto">
+                <h2>Add Your Exercise</h2>
+                <form action="POST">
+                    <div class="walking-form d-none">
+                        <div class="goal">
+                            <label for="goal">Goals:</label>
+                            <select name="goal" id="goal">
+                                <option disabled selected>Select goal Type</option>
+                                <option value="Walking">Walking</option>
+                                <option value="Swimming">Swimming</option>
+
+                            </select>
+                            <input type="text" name="goal" id="goal" placeholder="" />
+                        </div>
+                    </div>
+                </form>
+
+
+

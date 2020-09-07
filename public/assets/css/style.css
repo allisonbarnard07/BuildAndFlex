@@ -18,3 +18,36 @@ div.gallery {
     padding: 15px;
     text-align: center;
   }
+
+  form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+body {
+    background-color: #969590;
+    }
+    body > .grid {
+    height: 100%;
+    }
+    .image {
+    margin-top: -100px;
+    }
+    .column {
+    max-width: 450px;
+    }
+
+.crd1,
+.crd2,
+.signUp,
+.logIn {
+    margin-top: 100px;
+}
+
+.form-group.required .form-control.required :after { 
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 8px;
+    top:7px;
+}

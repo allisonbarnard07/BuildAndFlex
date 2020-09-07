@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <title>Build & Flex!</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #292e29">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/signup">Sign Up</a>
+        <a class="nav-link" href="/allexercises">All Challenges</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+    <header>
+      <h1>Workout Collections</h1>
+    </header>
+    <div class="ui container exercise">
+      <div class="ui raised card m-auto">
+        <h2>Choose Your Challenge</h2>
+        <form action="POST">
+          <div class="challenge-type">
+            <label for="type">Challenge Type:</label>
+            <select name="type" id="type">
+              <option disabled selected>Select Challenge Type</option>
+              <option value="walking">Walking</option>
+              <option value="swimming">Swimming</option>
+              <option value="hiking">Hiking</option>
+              <option value="pullups">Pullups</option>
+              <option value="running">Running</option>
+            </select>
+          </div>
+          <div class="walking-form d-none">
+            <div class="goal">
+              <label for="walking-goal">Goals (steps/day):</label>
+              <input type="text" name="goal" id="walking-goal" placeholder="" />
+            </div>
+            <div class="steps">
+              <label for="walking-steps">Steps (miles):</label>
+              <input type="number" name="steps" id="walking-steps" placeholder="1" />
+            </div>
+            <div class="duration">
+              <label for="walking-duration">Duration (minutes):</label>
+              <input type="number" name="duration" id="walking-duration" placeholder="10" />
+            </div>
+            <div class="miles">
+              <label for="walking-miles">Miles:</label>
+              <input type="number" name="miles" id="walking-miles" placeholder="1" />
+            </div>
+          </div>
+          <div class="swimming-form d-none">
+            <div class="goal">
+              <label for="swimming-goal">Goals:</label>
+              <input type="text" name="goal" id="swimming-goal" placeholder="" />
+            </div>
+            <div class="miles">
+              <label for="swimming-miles">Miles:</label>
+              <input type="number" name="miles" id="swimming-miles" placeholder="" />
+            </div>
+            <div class="swimming-duration">
+              <label for="swimming-duration">Duration (minutes):</label>
+              <input type="number" name="swimming-duration" id="swimming-duration" placeholder="10" />
+            </div>
+          </div>
+          <div class="hiking-form d-none">
+            <div class="goal">
+              <label for="hiking-goal">Goals:</label>
+              <input type="text" name="goal" id="hiking-goal" placeholder="" />
+            </div>
+            <div class="miles">
+              <label for="hiking-miles">Miles:</label>
+              <input type="number" name="miles" id="hiking-miles" placeholder="" />
+            </div>
+            <div class="hiking-duration">
+              <label for="hiking-duration">Duration (minutes):</label>
+              <input type="number" name="duration" id="hiking-duration" placeholder="10" />
+            </div>
+          </div>
+          <div class="running-form d-none">
+            <div class="goal">
+              <label for="running-goal">Goals:</label>
+              <input type="text" name="goal" id="running-goal" placeholder="" />
+            </div>
+            <div class="miles">
+              <label for="running-miles">Miles:</label>
+              <input type="number" name="miles" id="running-miles" placeholder="" />
+            </div>
+            <div class="running-duration">
+              <label for="running-duration">Duration (minutes):</label>
+              <input type="number" name="running-duration" id="running-duration" placeholder="10" />
+            </div>
+          </div>
+          <div class="pullup-form d-none">
+            <div class="goal">
+              <label for="pullup-goal">Goals:</label>
+              <input type="text" name="goal" id="pullup-goal" placeholder="" />
+            </div>
+            <div class="pullup-duration">
+              <label for="pullup-duration">Duration (minutes):</label>
+              <input type="number" name="duration" id="pullup-duration" placeholder="10" />
+            </div>
+            <div class="pullup-reps">
+              <label for="pullup-reps">Reps:</label>
+              <input type="number" name="reps" id="pullup-reps" placeholder="10" />
+            </div>
+          </div>
+          <div class="buttons">
+            <button disabled class="huge ui blue button complete">
+              Complete
+            </button><button disabled class="huge ui positive button add-another">Add Exercise</button>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="toast">
+    Workout Added Successfully!
+  </div>
+  <!-- <script src="/api.js"></script> -->
+  <script src="/allexercise.js"></script>
+</body>
+
+</html>

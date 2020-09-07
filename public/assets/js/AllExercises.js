@@ -130,7 +130,7 @@ function handleFormSubmit(event) {
     } else if (challengeType === "running"){
         challengeData.goal = runninggoalInput.value.trim();
         challengeData.duration = runningdurationInput.value.trim();
-        challengeData.miles =runningmilesInput.value.trim();
+        challengeData.miles = runningmilesInput.value.trim();
     } else if (challengeType === "pullups"){
         challengeData.goal = pullupgoalInput.value.trim();
         challengeData.duration = pullupdurationInput.value.trim();
@@ -142,8 +142,8 @@ function handleFormSubmit(event) {
 }
 function addExercise(post){
     $.post("/api/user-data", post, function(){
-        window.location.href = "/"
-    })
+        window.location.href = "/allstat";
+    });
 }
 function clearInputs() {
     walkinggoalInput.value = "";
@@ -152,6 +152,37 @@ function clearInputs() {
     walkingmilesInput.value = "";
     swimminggoalInput.value = "";
     swimmingdurationInput.value = "";
-    
+    swimmingmilesInput.value = "";
+    hikinggoalInput.value = "";
+    hikingdurationInput.value = "";
+    hikingmilesInput.value = "";
+    runninggoalInput.value = "";
+    runningdurationInput.value = "";
+    runningmilesInput.value = "";
+    pullupgoalInput.value = "";
+    pullupdurationInput.value = "";
+    pulluprepsInput.value = "";
     }
+    function handleToastAnimationEnd() {
+        toast.removeAttribute("class");
+        if (shouldNavigateAway) {
+            location.href = "/";
+        }
+        }
+    if(challengeTypeselect){
+        $(challengeTypeselect).on("change", handleChallengeTypeChange);
+    }
+    if (completeButton) {
+        $(completeButton).on("click", function (event) {
+            shouldNavigateAway = true;
+            handleFormSubmit(event);
+        });
+    }
+    if (addButton) {
+        $(addButton).on("click", handleFormSubmit);
+        }
+    $(toast).on("animationend", handleToastAnimationEnd);
+
+    document.$("input").forEach(element => element.on("input",validateInputs));
+
 });

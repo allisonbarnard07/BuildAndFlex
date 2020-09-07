@@ -8,7 +8,7 @@ var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // app.set("view engine", "handlebars");
-var hbsObject = {email: "", loggedin: false, userName: "", title: "you are not logged"}
+var hbsObject = {email: "", loggedin: false, firstName: "", title: "you are not logged"}
 
 module.exports = function(app) {
 

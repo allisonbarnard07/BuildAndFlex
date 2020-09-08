@@ -30,7 +30,7 @@ $(document).ready(function() {
     ageInput.val("")
   });
 
-  // Does a post to the signup route. If successful, we are redirected to the allexercises page
+  // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function signUpUser(email, password,firstName,lastName,age) {
     $.post("/api/signup", {

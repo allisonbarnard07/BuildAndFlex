@@ -170,7 +170,7 @@ function clearInputs() {
         }
         }
     if(challengeTypeselect){
-        $(challengeTypeselect).on("change", handleChallengeTypeChange);
+        challengeTypeselect.addEventListener("change", handleChallengeTypeChange);
     }
     if (completeButton) {
         $(completeButton).on("click", function (event) {
@@ -184,5 +184,5 @@ function clearInputs() {
     $(toast).on("animationend", handleToastAnimationEnd);
 
     document.$("input").forEach(element => element.on("input",validateInputs));
-
+    
 });

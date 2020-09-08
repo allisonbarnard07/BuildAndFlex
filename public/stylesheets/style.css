@@ -1,10 +1,7 @@
-form.signup,
-form.login {
-  margin-top: 50px;
-}
+
 
 body {
-    background-color: #969590;
+    background-color: #d1d0c9;
     }
     body > .grid {
     height: 100%;
@@ -21,6 +18,7 @@ body {
 .signUp,
 .logIn {
     margin-top: 100px;
+    margin-bottom: 75px;
 }
 
 .form-group.required .form-control.required :after { 
@@ -29,4 +27,12 @@ body {
     position: absolute;
     margin-left: 8px;
     top:7px;
+}
+
+.textYellow {
+  color: rgb(214, 147, 16);
+}
+
+a.textYellow:hover{
+  color: #969590;
 }

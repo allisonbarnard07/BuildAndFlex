@@ -16,24 +16,42 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-link" href="#">Profile</a>
-        <a class="nav-link" href="#">Challenges</a>
-      </div>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link active" href="#"
+                >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Challenges</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="{{ url('/login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/signUp') }}">Register</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/signOut') }}">Sign Out</a>
+            </li>
+          </ul>
     </div>
   </nav>
 
   <div class="container">
       <div class="row">
           <div class="col-md-4 crd1">
-            <div class="card">
-                <div class="card-header">
+            <div class="card shadow-lg">
+                <div class="card-header textYellow">
                   User Name
                 </div>
-                <img class="card-img-top" src="img/male-placeholder-image.jpeg" alt="male-placeholder-image">
+                <img class="card-img-top rounded-circle" src="img/male-placeholder-image.jpeg" alt="male-placeholder-image">
                 <div class="card-body">
-                  <h5 class="card-title">User Info</h5>
+                  <h5 class="card-title textYellow">USER INFO</h5>
                   <p class="card-text"><strong>Name:</strong> John Doe</p>
                   <p class="card-text"><strong>Age:</strong> 35</p>
                   <p class="card-text"><strong>Weight:</strong> 185</p>
@@ -42,32 +60,31 @@
               </div>
           </div>
           <div class="col-md-8">
-            <div class="card text-center crd2">
+            <div class="card crd2 shadow-lg">
                 <div class="card-header">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                          <a class="nav-link active" id="walk-tab" data-toggle="tab" href="#walk" role="tab" aria-controls="walk" aria-selected="true">Walking Challenge</a>
+                          <a class="nav-link active textYellow" id="walk-tab" data-toggle="tab" href="#walk" role="tab" aria-controls="walk" aria-selected="true">Walking Challenge</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" id="swim-tab" data-toggle="tab" href="#swim" role="tab" aria-controls="swim" aria-selected="false">Swim Challenge</a>
+                          <a class="nav-link textYellow" id="swim-tab" data-toggle="tab" href="#swim" role="tab" aria-controls="swim" aria-selected="false">Swim Challenge</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" id="hike-tab" data-toggle="tab" href="#hike" role="tab" aria-controls="hike" aria-selected="false">Hike Challenge</a>
+                          <a class="nav-link textYellow" id="hike-tab" data-toggle="tab" href="#hike" role="tab" aria-controls="hike" aria-selected="false">Hike Challenge</a>
                         </li>
                       </ul>
                       <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="walk" role="tabpanel" aria-labelledby="walk-tab">
-                            <h5 class="card-title">Some Header</h5>
-                            <p class="card-text"><strong>Starting Weight:</strong></p>
-                            <p class="card-text"><strong>End Weight:</strong></p>
-                            <p class="card-text"><strong>Goal:</strong></p>
-                            <p class="card-text"><strong>Duration:</strong></p>
-                            <p class="card-text"><strong>Miles:</strong></p>
-                            <p class="card-text"><strong>Team:</strong></p>
-                            <p class="card-text"><strong>Steps:</strong></p>
+                            <p class="card-text"><strong>Starting Weight:</strong> </p>
+                            <p class="card-text"><strong>End Weight:</strong> </p>
+                            <p class="card-text"><strong>Goal:</strong> 50</p>
+                            <p class="card-text"><strong>Duration:</strong> </p>
+                            <p class="card-text"><strong>Miles:</strong> 15 + <input type="text"><button>update</button></p>
+                            <p class="card-text"><strong>Team:</strong> </p>
+                            <p class="card-text"><strong>Steps:</strong> </p>
+                            <button>update stats</button>
                         </div>
                         <div class="tab-pane fade" id="swim" role="tabpanel" aria-labelledby="swim-tab">
-                            <h5 class="card-title">Some Header</h5>
                             <p class="card-text"><strong>Starting Weight:</strong></p>
                             <p class="card-text"><strong>End Weight:</strong></p>
                             <p class="card-text"><strong>Goal:</strong></p>
@@ -76,7 +93,6 @@
                             <p class="card-text"><strong>Team:</strong></p>
                         </div>
                         <div class="tab-pane fade" id="hike" role="tabpanel" aria-labelledby="hike-tab">
-                            <h5 class="card-title">Some Header</h5>
                             <p class="card-text"><strong>Starting Weight:</strong></p>
                             <p class="card-text"><strong>End Weight:</strong></p>
                             <p class="card-text"><strong>Goal:</strong></p>
@@ -89,8 +105,7 @@
               </div>
           </div>
       </div>
-  </div>
-
+  </div>v>
 
 
 

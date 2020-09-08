@@ -22,14 +22,14 @@ $(document).ready(function() {
     passwordInput.val("");
   });
 
-  // loginUser does a post to our "api/login" route and if successful, redirects us the the allexercises page
+  // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(email, password) {
     $.post("/api/login", {
       email: email,
       password: password
     })
       .then(function() {
-        window.location.replace("/allexercises");
+        window.location.replace("/members");
         // If there's an error, log the error
       })
       .catch(function(err) {

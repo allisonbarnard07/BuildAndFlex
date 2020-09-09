@@ -1,6 +1,6 @@
 // Requiring our models and passport as we've configured it
-const db = require("../models");
-const passport = require("../config/passport");
+var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -18,10 +18,8 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
-    })
+    console.log(req.body);
+    db.User.create(req.body)
       .then(() => {
         res.redirect(307, "/api/login");
       })
@@ -49,5 +47,43 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  // Route for posting all user challenge data to database
+  app.post("/api/user-data", (req, res) => {
+    // console.log(req.body);
+    db.allChallenges.create({
+      challenge: req.body.challenge,
+      goal: req.body.goal,
+      miles: req.body.miles,
+      duration: req.body.duration,      
+      steps: req.body.steps,
+      UserId: req.body.id
+    })
+      .then(function(allStats) {
+        res.json(allStats);      
+      })
+  });
+
+  // Route for getting all user challenge data from database
+  app.get("/api/all-stats", function(req, res) {
+      db.allChallenges.findAll({})
+      .then(function(allStats){
+        // console.log(allStats);
+        res.json(allStats);
+
+        // Maps all database information
+        var newArray = allStats.map(x => x.dataValues);
+
+        // Filters out all data with RUN
+        var filterArray = newArray.filter(function(y) {
+          return y.challenge === 'run';});
+
+        // Filter out all data with WALK  
+        var filterArrayUserId = newArray.filter(function(z) {
+          return z.UserId === 8;}); 
+          
+        console.log(filterArrayUserId);        
+      });          
   });
 };

@@ -1,4 +1,4 @@
-DROP database if exists buildAndFlex_db;
+DROP database if exists project_db;
 
-CREATE DATABASE buildAndFlex_db;
+CREATE DATABASE project_db;
 

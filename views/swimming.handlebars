@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 swimming">
+            <div class="card bg-light mb-3">
+            <div class="card-header">
+                <h1>Swimming Challenge</h1>
+                <p>Please fill in this form to add your challenge.</p>
+            </div>
+            <div class="card-body">
+                <form class="swimming-form" action="/api/swimming" method="POST">
+                    <div class="form-group row">
+                        <label for="swimming-goal" class="col-sm-2 col-form-label">Goals</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="swimming-goal" name= "goal">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="swimming-miles" class="col-sm-2 col-form-label">Miles</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="swimming-miles" name= "miles" placeholder="1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="swimming-duration" class="col-sm-2 col-form-label">Duration on (minutes)</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="swimming-duration" name= "duration" placeholder="10">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-success">Add Challenge</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

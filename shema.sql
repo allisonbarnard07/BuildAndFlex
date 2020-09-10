@@ -4,7 +4,16 @@ CREATE DATABASE buildAndFlex_db;
 
 USE buildAndFlex_db;
 
-<<<<<<< HEAD:shema.sql
+CREATE TABLE user (
+    id INT AUTO_INCREMENT,
+    email varchar(150) not null,
+    password varchar(150) not null,
+    age INT,
+    firstName varchar(150),
+    lastName varchar(150),
+    PRIMARY KEY (id)
+)
+
 CREATE TABLE walkingChallenge (
 id INT NOT NULL auto_increment,
 username VARCHAR(100) NOT NULL,
@@ -59,23 +68,15 @@ CREATE TABLE pullupChallenge (
 );
 
 CREATE TABLE runningChallenge (
-=======
-CREATE TABLE user (
->>>>>>> 857b9acfa3aade1773c75db32dd95679f23edfd0:db/shema.sql
     id INT AUTO_INCREMENT,
     email varchar(150) not null,
     password varchar(150) not null,
     age INT,
-<<<<<<< HEAD:shema.sql
     startingWeight INT,
     endWeight INT,
     goal varchar (150) NOT NULL,
     duration INT NOT NULL,
     miles INT NOT NULL,
     team VARCHAR (150) DEFAULT NULL,
-=======
-    firstName varchar(150),
-    lastName varchar(150),
->>>>>>> 857b9acfa3aade1773c75db32dd95679f23edfd0:db/shema.sql
     PRIMARY KEY (id)
 )

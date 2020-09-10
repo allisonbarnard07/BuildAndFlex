@@ -1,36 +1,35 @@
-<div class="container">
-      <div class="row">
-          <div class="col-md-4 crd1">
-            <div class="card shadow-lg">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <div class="card crd1 shadow-lg">
                 <div class="card-header textYellow">
-                  User Name
+                    User Name
                 </div>
-                <img class="card-img-top rounded-circle" src="img/male-placeholder-image.jpeg" alt="male-placeholder-image">
+                <img class="card-img-top rounded-circle" src="img/male-placeholder-image.jpeg"
+                    alt="male-placeholder-image">
                 <div class="card-body">
-                  <h5 class="card-title textYellow">USER INFO</h5>
-                  <p class="card-text" id="name"><strong>Name:</strong> John Doe</p>
-                  <p class="card-text" id="age"><strong>Age:</strong> 35</p>
-                  <p class="card-text" id="startingWeight"><strong>Weight:</strong> 185</p>
-                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    <h5 class="card-title textYellow">USER INFO</h5>
+                    <p class="card-text" id="name"><strong>Name:</strong> John Doe</p>
+                    <p class="card-text" id="age"><strong>Age:</strong> 35</p>
+                    <p class="card-text" id="startingWeight"><strong>Weight:</strong> 185</p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
-              </div>
-          </div>
-          <div class="col-md-8">
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
             <div class="card crd2 shadow-lg">
                 <div class="card-header">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                          <a class="nav-link active textYellow" id="walk-tab" data-toggle="tab" href="#walk" role="tab" aria-controls="walk" aria-selected="true">Walking Challenge</a>
+                            <a class="nav-link active textYellow" id="walk-tab" data-toggle="tab" href="#walk"
+                                role="tab" aria-controls="walk" aria-selected="true">Walking Challenge</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link textYellow" id="swim-tab" data-toggle="tab" href="#swim" role="tab" aria-controls="swim" aria-selected="false">Swim Challenge</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link textYellow" id="hike-tab" data-toggle="tab" href="#hike" role="tab" aria-controls="hike" aria-selected="false">Hike Challenge</a>
-                        </li>
-                      </ul>
-                      <div class="tab-content" id="myTabContent">
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="walk" role="tabpanel" aria-labelledby="walk-tab">
+                            <div class="tab-pane fade show active" id="walk" role="tabpanel" aria-labelledby="walk-tab">
                             <p class="card-text" id="startingWeight"><strong>Starting Weight:</strong> </p>
                             <p class="card-text" id="endWeight"><strong>End Weight:</strong> </p>
                             <p class="card-text"><strong>Goal:</strong> 50</p>
@@ -38,27 +37,14 @@
                             <p class="card-text"><strong>Miles:</strong> 15 + <input type="text"><button>update</button></p>
                             <p class="card-text"><strong>Team:</strong> </p>
                             <p class="card-text"><strong>Steps:</strong> </p>
-                            <button>update stats</button>
+                            <div class="row justify-content-center">
+                                <button type="button" class="btn btn-warning">Submit</button>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="swim" role="tabpanel" aria-labelledby="swim-tab">
-                            <p class="card-text"><strong>Starting Weight:</strong></p>
-                            <p class="card-text"><strong>End Weight:</strong></p>
-                            <p class="card-text"><strong>Goal:</strong></p>
-                            <p class="card-text"><strong>Duration:</strong></p>
-                            <p class="card-text"><strong>Miles:</strong></p>
-                            <p class="card-text"><strong>Team:</strong></p>
-                        </div>
-                        <div class="tab-pane fade" id="hike" role="tabpanel" aria-labelledby="hike-tab">
-                            <p class="card-text"><strong>Starting Weight:</strong></p>
-                            <p class="card-text"><strong>End Weight:</strong></p>
-                            <p class="card-text"><strong>Goal:</strong></p>
-                            <p class="card-text"><strong>Duration:</strong></p>
-                            <p class="card-text"><strong>Miles:</strong></p>
-                            <p class="card-text"><strong>Team:</strong></p>
-                        </div>
-                      </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-      </div>
-  </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

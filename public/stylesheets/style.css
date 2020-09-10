@@ -1,7 +1,8 @@
 
 
 body {
-    background-color: #d1d0c9;
+    background-image: url("/img/tegan-mierle-ioyEITUD2G8-unsplash.jpg");
+    background-size: cover;
     }
     body > .grid {
     height: 100%;
@@ -35,4 +36,14 @@ body {
 
 a.textYellow:hover{
   color: #969590;
+}
+.welcome {
+    font-size: 3rem;
+    margin-top: 200px;
+    color: rgb(214, 147, 16);
+    font-weight: bolder;
+}
+
+.navbar-brand.textYellow {
+    color: rgb(214, 147, 16)
 }

@@ -1,26 +1,5 @@
-{
-
-  "name": "projecttwo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
-    "express-session": "^1.17.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "passport": "^0.4.1",
-    "sequelize": "^6.3.4"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-
-
-  "name": "1-Passport-Example",
+  {
+  "name": "project-two",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -58,14 +37,6 @@
     "type": "git",
     "url": "git+https://github.com/allisonbarnard07/ProjectTwo.git"
   },
-
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/allisonbarnard07/ProjectTwo/issues"
-  },
-  "homepage": "https://github.com/allisonbarnard07/ProjectTwo#readme"
-
   "bugs": {
     "url": "https://github.com/allisonbarnard07/ProjectTwo/issues"
   },

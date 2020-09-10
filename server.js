@@ -13,7 +13,7 @@ var db = require("./models");
 var app = express();
 // View Engine setup
 app.set("views", path.join(__dirname, "views"));
-app.engine("hbs", hbs({ extname: "hbs",defaultLayout: "main", layoutsDir: __dirname + "/views/layouts/" }));
+app.engine("hbs", hbs({ extname: "hbs",defaultLayout: "main", layoutsDir: __dirname + "/views/layouts/" })); 
 app.set("view engine", "hbs");
 app.use(express.urlencoded({ extended: true }));// should it be like this or should we make it false
 app.use(express.json());

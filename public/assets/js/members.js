@@ -3,7 +3,7 @@ $(document).ready(function(){
     selectchallengeType.on("change", handleChallengeChange);
     function handleChallengeChange(event){
         event.preventDefault();
-        let challengeType = event.target.value
+        let challengeType =  $("select").children("option:selected").val();
         if( challengeType === "walking"){
             window.location.replace("/walking")
 

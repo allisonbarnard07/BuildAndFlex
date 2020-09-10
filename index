@@ -1,0 +1,51 @@
+DATABASE > - username, age, startingWeight, endWeight, goal, steps, milesSwam, reps
+
+    -> Tables: walkingChallenge, swimChallenge, hikeChallenge, pullupChallenge, runningChallenge, Quotes
+
+    => ex/ Table = walkingChallenge (id, username, age, startingWeight goal, steps, miles, group(default null))
+    => ex/ Table = pullupChallenge (id, username, age, goal, reps, group(default null))
+    => ex/ Table = swimChallenge (id, username, age, startingWeight, goal, milesSwam, group(default null))
+
+HTML - STEP 1: Choose a challenge (walking, swimming, hiking, pullup, etc.)
+        if (walking) then go to a walkingChallenge HTML page (ROUTE) with API MOTIVATIONAL EXERCISE QUOTE!
+        if (swimming) then go to a swimChallenge HTML page (ROUTE) with API MOTIVATIONAL EXERCISE QUOTE!
+        if (hiking) then go to an hikeChallenge HTML page (ROUTE) with API MOTIVATIONAL EXERCISE QUOTE!
+
+     - STEP 2: In each challenge, ask user to enter personal information (firstName, lastName, age, {startingWeight optional})
+     - STEP 3: Have user choose a goal to reach > 10mi, 20mi, 50mi, 100mi, etc. or relevant goal for challenge
+     - STEP 4: (POST ROUTE) to (CREATE or UPDATE) information in DATABASE
+     - STEP 5: Display challenge information showing statistics on each challenge page. 
+
+API - BULK HACKERS Fitness Quotes API
+    - Fitbit API
+    - Garmin
+    - STRAVA API w/ maps
+
+
+Saturday - 
+* Foreign Keys
+* ORM
+* Package.json
+* Heroku DATABASE (Final Stage)
+* Login Page
+    - Authentication
+* Sign Up Page
+* (STRAVA, Garmin) API Request Key
+* User manually enters data, API data secondary 
+
+* Login Page
+
+
+
+* Sign Up Page
+    - Username = email address
+    - firstName
+    - lastName
+    - age
+    
+
+* Members Page
+
+* User Profile Page
+    - group (optional)
+    - startingWeight (optional)

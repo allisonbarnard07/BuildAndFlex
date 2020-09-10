@@ -40,10 +40,15 @@ a.textYellow:hover{
 .welcome {
     font-size: 3rem;
     margin-top: 200px;
-    color: rgb(214, 147, 16);
+    color: rgb(255, 179, 28);
     font-weight: bolder;
 }
 
 .navbar-brand.textYellow {
     color: rgb(214, 147, 16)
+}
+
+.specialCard {
+    background-color: rgba(245, 245, 245, 1);
+    opacity: .9;
 }

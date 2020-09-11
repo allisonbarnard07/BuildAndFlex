@@ -1,46 +1,137 @@
 // Requiring path to so we can use relative routes to our HTML files
-var path = require("path");
-var express = require("express");
-var db = require("../models");
-
+const path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
-var isAuthenticated = require("../config/middleware/isAuthenticated");
-
-// app.set("view engine", "handlebars");
-var hbsObject = {email: "", loggedin: false, firstName: "", title: "you are not logged"}
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-
-  app.get("/", function(req, res) {
-    // redirect the user to the login page when a user visit the page for the first time.(when our server start listen a request)
-      res.redirect("/login");
-  });
-  // login route
-  app.get("/login", function(req, res) {
-    res.render("login", hbsObject );
-  });
-  // signup route
-  app.get("/signup", function(req, res){
-    res.render("signup", hbsObject);
-  });
-  // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/allexercises", isAuthenticated, function(req, res) {
-    hbsObject.loggedin = true;
-    hbsObject.title = "You are logged"
-    res.render("allexercises", hbsObject);// what will be the hbs object here? since
-  });
-  // // logout route
-  // app.get("/logout", (req, res) => {
-  //   if(req.user){
-  //     hbsObject.loggedin = false;
-  //     hbsObject.title = "You are logged out";
-  //     res.redirect("/");
+  // app.get("/", (req, res) => {
+  //   // If the user already has an account send them to the members page
+  //   if (req.user) {
+  //     res.redirect("/members");
   //   }
-  //   else{
-  //     res.redirect("/login");
-  //   }
+  //   res.sendFile(path.join(__dirname, "../public/signup.html"));
   // });
 
+  app.get("/", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("login");
+  });
+
+  // app.get("/login", (req, res) => {
+  //   // If the user already has an account send them to the members page
+  //   if (req.user) {
+  //     res.redirect("/members");
+  //   }
+  //   res.sendFile(path.join(__dirname, "../public/login.html"));
+  // });
+
+  app.get("/signup", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("signup");
+  });
+
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  // app.get("/members", isAuthenticated, (req, res) => {
+  //   res.sendFile(path.join(__dirname, "../public/members.html"));
+  // });
+
+<<<<<<< HEAD
+  app.get("/members", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+=======
+  app.get("/profile", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/profile");
+    }
+    res.render("profile");
+  });
+
+  app.get("/members", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+>>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
+      res.redirect("/members");
+    }
+    res.render("members");
+  });
+<<<<<<< HEAD
+
+  app.get("/walking", (req, res) => {
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("walking");
+  });
+
+  app.get("/profile", (req, res) => {
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("profile");
+=======
+
+  app.get("/walking", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("walking");
+  });
+
+  app.get("/swimming", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("swimming");
+  });
+
+  app.get("/hiking", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("hiking");
+  });
+
+  app.get("/pullup", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("pullup");
+  });
+
+  app.get("/running", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("running");
+  });
+
+  app.get("/stats", (req, res) => {
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.sendFile(path.join(__dirname, "../public/test.html"));
+  });
+
+  app.get("/results", (req, res) => {
+    // if (req.user) {
+    //   res.redirect("/members");
+    // }
+    res.sendFile(path.join(__dirname, "../public/results.html"));
+>>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
+  });
 };

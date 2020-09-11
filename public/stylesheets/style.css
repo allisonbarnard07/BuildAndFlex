@@ -1,5 +1,3 @@
-
-
 body {
     background-image: url("/img/tegan-mierle-ioyEITUD2G8-unsplash.jpg");
     background-size: cover;
@@ -12,16 +10,21 @@ body {
     }
     .column {
     max-width: 450px;
-    }
+}
 
 .crd1,
 .crd2,
 .signUp,
-.logIn {
+.logIn,
+.jumbotron,
+.walking {
     margin-top: 100px;
     margin-bottom: 75px;
 }
 
+.walking-form {
+    margin-top: 20px;
+}
 .form-group.required .form-control.required :after { 
     color: #d00;
     content: "*";
@@ -52,4 +55,8 @@ a.textYellow:hover{
 .specialCard {
     background-color: rgba(245, 245, 245, 1);
     opacity: .9;
+}
+
+.challenge-type {
+   justify-content: center;
 }

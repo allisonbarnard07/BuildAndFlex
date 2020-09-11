@@ -22,13 +22,13 @@
     "passport-local": "^1.0.0",
     "sequelize": "^5.22.3"
   },
-<<<<<<< HEAD
-=======
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
 
   "name": "1-Passport-Example",
+  {
+  "name": "project-two",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -51,7 +51,6 @@
     "passport-local": "^1.0.0",
     "sequelize": "^5.22.3"
   },
->>>>>>> 6cbba172d150f8a039f3168670f51def8c05105c
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
@@ -61,23 +60,17 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-<<<<<<< HEAD
-=======
-
->>>>>>> 6cbba172d150f8a039f3168670f51def8c05105c
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/allisonbarnard07/ProjectTwo.git"
   },
-<<<<<<< HEAD
   "bugs": {
     "url": "https://github.com/allisonbarnard07/ProjectTwo/issues"
   },
   "homepage": "https://github.com/allisonbarnard07/ProjectTwo#readme",
   "description": ""
 }
-=======
 
   "author": "",
   "license": "ISC",
@@ -93,4 +86,3 @@
   "description": ""
 
 }
->>>>>>> 6cbba172d150f8a039f3168670f51def8c05105c

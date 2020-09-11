@@ -13,15 +13,13 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/signup.html"));
   // });
 
-   
-    app.get("/", function(req, res) {
-       // If the user already has an account send them to the members page
+  app.get("/", (req, res) => {
+    // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
     }
-      res.render("login");
-    });
-
+    res.render("login");
+  });
 
   // app.get("/login", (req, res) => {
   //   // If the user already has an account send them to the members page
@@ -31,14 +29,13 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/login.html"));
   // });
 
-  
-  app.get("/signup", function(req, res) {
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
- if (req.user) {
-   res.redirect("/members");
- }
-   res.render("signup");
- });
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("signup");
+  });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
@@ -46,84 +43,73 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/members.html"));
   // });
 
-  
-  app.get("/members", function(req, res) {
+  app.get("/profile", (req, res) => {
     // If the user already has an account send them to the members page
- if (req.user) {
-   res.redirect("/members");
- }
-   res.render("members");
- });
+    if (req.user) {
+      res.redirect("/profile");
+    }
+    res.render("profile");
+  });
 
- app.get("/walking", function(req, res) {
-  // If the user already has an account send them to the members page
-if (req.user) {
- res.redirect("/members");
-}
- res.render("walking");
-});
+  app.get("/members", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("members");
+  });
 
-app.get("/swimming", function(req, res) {
-  // If the user already has an account send them to the members page
-if (req.user) {
- res.redirect("/members");
-}
- res.render("swimming");
-});
+  app.get("/walking", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("walking");
+  });
 
-app.get("/hiking", function(req, res) {
-  // If the user already has an account send them to the members page
-if (req.user) {
- res.redirect("/members");
-}
- res.render("hiking");
-});
+  app.get("/swimming", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("swimming");
+  });
 
-app.get("/pullup", function(req, res) {
-  // If the user already has an account send them to the members page
-if (req.user) {
- res.redirect("/members");
-}
- res.render("pullup");
-});
+  app.get("/hiking", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("hiking");
+  });
 
-app.get("/running", function(req, res) {
-  // If the user already has an account send them to the members page
-if (req.user) {
- res.redirect("/members");
-}
- res.render("running");
-});
+  app.get("/pullup", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("pullup");
+  });
 
+  app.get("/running", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("running");
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  app.get("/stats", (req, res) => {    
+  app.get("/stats", (req, res) => {
     // if (req.user) {
     //   res.redirect("/members");
     // }
     res.sendFile(path.join(__dirname, "../public/test.html"));
   });
 
-  app.get("/results", (req, res) => {    
+  app.get("/results", (req, res) => {
     // if (req.user) {
     //   res.redirect("/members");
     // }
     res.sendFile(path.join(__dirname, "../public/results.html"));
   });
-  
 };

@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+
+const db = require("../models");
+const passport = require("../config/passport");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -10,7 +11,7 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
     });
   });
 
@@ -18,22 +19,18 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-<<<<<<< HEAD
-    console.log(req.body);
-    db.User.create(req.body)
-=======
     db.User.create({
       email: email,
       password: password,
       age: age,
       firstName: firstName,
-      lastName: lastName
+      lastName: lastName,
     })
->>>>>>> 857b9acfa3aade1773c75db32dd95679f23edfd0
+
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch(err => {
+      .catch((err) => {
         res.status(401).json(err);
       });
   });
@@ -62,48 +59,40 @@ module.exports = function(app) {
   // Route for posting all user challenge data to database
   app.post("/api/user-data", (req, res) => {
     // console.log(req.body);
-    db.allChallenges.create({
-      challenge: req.body.challenge,
-      goal: req.body.goal,
-      miles: req.body.miles,
-      duration: req.body.duration,      
-      steps: req.body.steps,
-      UserId: req.body.id
-    })
-      .then(function(allStats) {
-        res.json(allStats);      
+    db.allChallenges
+      .create({
+        challenge: req.body.challenge,
+        goal: req.body.goal,
+        miles: req.body.miles,
+        duration: req.body.duration,
+        steps: req.body.steps,
+        UserId: req.body.id
       })
+      .then(function(allStats) {
+        res.json(allStats);
+      });
   });
 
   // Route for getting all user challenge data from database
   app.get("/api/all-stats", function(req, res) {
-<<<<<<< HEAD
-      db.allChallenges.findAll({})
-      .then(function(allStats){
-        // console.log(allStats);
-        res.json(allStats);
+    db.allChallenges.findAll({}).then(function(allStats) {
+      // console.log(allStats);
+      res.json(allStats);
 
-        // Maps all database information
-        var newArray = allStats.map(x => x.dataValues);
+      // Maps all database information
+      var newArray = allStats.map((x) => x.dataValues);
 
-        // Filters out all data with RUN
-        var filterArray = newArray.filter(function(y) {
-          return y.challenge === 'run';});
+      // Filters out all data with RUN
+      var filterArray = newArray.filter(function(y) {
+        return y.challenge === "run";
+      });
 
-        // Filter out all data with WALK  
-        var filterArrayUserId = newArray.filter(function(z) {
-          return z.UserId === 8;}); 
-          
-        console.log(filterArrayUserId);        
-      });          
-=======
-      db.allChallenges.findAll()
-      .then(function(allStats){
-        // console.log(allStats)
-        res.json(allStats);
-        var newArray = allStats.map(x => x.dataValues);
-        console.log(newArray);
-      });    
->>>>>>> 857b9acfa3aade1773c75db32dd95679f23edfd0
+      // Filter out all data with WALK
+      var filterArrayUserId = newArray.filter(function(z) {
+        return z.UserId === 8;
+      });
+
+      console.log(filterArrayUserId);
+    });
   });
 };

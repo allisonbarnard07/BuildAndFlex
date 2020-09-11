@@ -1,5 +1,5 @@
 // Requiring our models and passport as we've configured it
-
+const express = require("express");
 const db = require("../models");
 const passport = require("../config/passport");
 
@@ -19,7 +19,6 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-
     db.User.create({
       email: email,
       password: password,
@@ -57,43 +56,43 @@ module.exports = function(app) {
     }
   });
 
-
   // Route for posting all user challenge data to database
   app.post("/api/user-data", (req, res) => {
     // console.log(req.body);
-    db.allChallenges.create({
-      challenge: req.body.challenge,
-      goal: req.body.goal,
-      miles: req.body.miles,
-      duration: req.body.duration,      
-      steps: req.body.steps,
-      UserId: req.body.id
-    })
-      .then(function(allStats) {
-        res.json(allStats);      
+    db.allChallenges
+      .create({
+        challenge: req.body.challenge,
+        goal: req.body.goal,
+        miles: req.body.miles,
+        duration: req.body.duration,
+        steps: req.body.steps,
+        UserId: req.body.id
       })
+      .then(allStats => {
+        res.json(allStats);
+      });
   });
 
   // Route for getting all user challenge data from database
-  app.get("/api/all-stats", function(req, res) {
+  app.get("/api/all-stats", (req, res) => {
+    db.allChallenges.findAll({}).then(allStats => {
+      // console.log(allStats);
+      res.json(allStats);
 
-      db.allChallenges.findAll({})
-      .then(function(allStats){
-        // console.log(allStats);
-        res.json(allStats);
+      // Maps all database information
+      const newArray = allStats.map(x => x.dataValues);
 
-        // Maps all database information
-        var newArray = allStats.map(x => x.dataValues);
+      // Filters out all data with RUN
+      const filterArray = newArray.filter(y => {
+        return y.challenge === "run";
+      });
 
-        // Filters out all data with RUN
-        var filterArray = newArray.filter(function(y) {
-          return y.challenge === 'run';});
+      // Filter out all data with WALK
+      const filterArrayUserId = newArray.filter(z => {
+        return z.UserId === 8;
+      });
 
-        // Filter out all data with WALK  
-        var filterArrayUserId = newArray.filter(function(z) {
-          return z.UserId === 8;}); 
-          
-        console.log(filterArrayUserId);        
-      });          
+      console.log(filterArrayUserId);
+    });
   });
 };

@@ -1,28 +1,29 @@
-  <div class="container">
+  <div class="container mt-1">
     <div class="jumbotron">
-      <h1>Welcome To Workout Collections {{firstName}}</h1>
-      <h3>Lets Get Started!</h3>
+      <h1 class="text-center p-2">Welcome To Workout Collections {{firstName}}</h1>
+      <button class="btn btn-success">Lets Get Started!</button>
       <hr>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 members">
-          <div class="card bg-light mb-3">
+          <div class="card bg-light border-primary p-2 mb-3">
             <div class="card-header">
               <h1>Choose your Challenge</h1>
             </div>
-            <div class="card-body">
+            <div class="card-body ">
               <div class="challenge-type">
                 <label for="type">Challenge Type:</label>
-              <select name="challenge" id="type">
-              
+              <select  class="border-primary" name="challenge" id="type">
+                  
                 <option selected value="">Select Challenge Type</option>
                 <option value="walking">Walking</option>
                 <option value="swimming">Swimming</option>
                 <option value="hiking">Hiking</option>
                 <option value="pullup">Pullup</option>
                 <option value="running">Running</option>
+                  
               </select>
             </div>
           </div>

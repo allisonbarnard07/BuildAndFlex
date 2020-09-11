@@ -43,11 +43,6 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/members.html"));
   // });
 
-<<<<<<< HEAD
-  app.get("/members", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-=======
   app.get("/profile", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -59,12 +54,10 @@ module.exports = function(app) {
   app.get("/members", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
->>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
       res.redirect("/members");
     }
     res.render("members");
   });
-<<<<<<< HEAD
 
   app.get("/walking", (req, res) => {
     if (req.user) {
@@ -78,60 +71,5 @@ module.exports = function(app) {
       res.redirect("/members");
     }
     res.render("profile");
-=======
-
-  app.get("/walking", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.render("walking");
-  });
-
-  app.get("/swimming", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.render("swimming");
-  });
-
-  app.get("/hiking", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.render("hiking");
-  });
-
-  app.get("/pullup", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.render("pullup");
-  });
-
-  app.get("/running", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.render("running");
-  });
-
-  app.get("/stats", (req, res) => {
-    // if (req.user) {
-    //   res.redirect("/members");
-    // }
-    res.sendFile(path.join(__dirname, "../public/test.html"));
-  });
-
-  app.get("/results", (req, res) => {
-    // if (req.user) {
-    //   res.redirect("/members");
-    // }
-    res.sendFile(path.join(__dirname, "../public/results.html"));
->>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
   });
 };

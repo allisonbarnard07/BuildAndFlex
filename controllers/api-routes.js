@@ -1,4 +1,4 @@
-// Requiring our models and passport as we've configured it
+// Requiring our models and passport as we've configured it​
 const db = require("../models");
 const passport = require("../config/passport");
 
@@ -18,22 +18,15 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-    db.User.create({
-      email: email,
-      password: password,
-      age: age,
-      firstName: firstName,
-      lastName: lastName
-    })
+    db.User.create(req.body)
 
       .then(() => {
-        res.redirect(307, "/api/login");
+        res.redirect("/members");
       })
       .catch(err => {
         res.status(401).json(err);
       });
   });
-
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
@@ -82,16 +75,16 @@ module.exports = function(app) {
       const newArray = allStats.map(x => x.dataValues);
 
       // Filters out all data with RUN
-      // const filterArray = newArray.filter(y => {
-      //   return y.challenge === "run";
-      // });
+      const filterArray = newArray.filter(y => {
+        return y.challenge === "run";
+      });
 
       // Filter out all data with WALK
       const filterArrayUserId = newArray.filter(z => {
         return z.UserId === 8;
       });
-
-      console.log(filterArrayUserId);
     });
+
+    console.log(filterArrayUserId);
   });
 };

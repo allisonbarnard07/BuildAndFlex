@@ -18,7 +18,7 @@ module.exports = function(app) {
   });
   // login route
   app.get("/login", function(req, res) {
-    res.render("login", hbsObject );
+    res.render("login");
   });
   // signup route
   app.get("/signup", function(req, res){
@@ -26,10 +26,11 @@ module.exports = function(app) {
   });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/allexercises", isAuthenticated, function(req, res) {
-    hbsObject.loggedin = true;
-    hbsObject.title = "You are logged"
-    res.render("allexercises", hbsObject);// what will be the hbs object here? since
+  app.get("/members", isAuthenticated, function(req, res) {
+    res.render("members");// what will be the hbs object here? since
+  });
+  app.get("/walking", function(req, res) {
+    res.render("walking");// what will be the hbs object here? since
   });
   // // logout route
   // app.get("/logout", (req, res) => {

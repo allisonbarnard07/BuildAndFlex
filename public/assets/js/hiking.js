@@ -30,8 +30,14 @@ $(document).ready(function() {
         miles: miles
     })
         .then(function(data) {
-          // window.location.replace("/profile or what?");
-      // If there's an error, handle it by throwing up a bootstrap alert
+        window.location.replace("/profile");
+    //   If there's an error, handle it by throwing up a bootstrap alert
         });
     };
+     // This file just does a GET request to figure out id of the  challenge 
+
+    $.get("/api/user_data").then(function(data) {
+    $("#id-input").val(data.id);
+    });
+
 });

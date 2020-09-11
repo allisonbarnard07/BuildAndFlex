@@ -1,5 +1,4 @@
 // Requiring our models and passport as we've configured it
-const express = require("express");
 const db = require("../models");
 const passport = require("../config/passport");
 
@@ -11,7 +10,7 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id,
+      id: req.user.id
     });
   });
 
@@ -24,13 +23,13 @@ module.exports = function(app) {
       password: password,
       age: age,
       firstName: firstName,
-      lastName: lastName,
+      lastName: lastName
     })
 
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch((err) => {
+      .catch(err => {
         res.status(401).json(err);
       });
   });
@@ -68,47 +67,27 @@ module.exports = function(app) {
         steps: req.body.steps,
         UserId: req.body.id
       })
-<<<<<<< HEAD
       .then(allStats => {
-=======
-      .then(function(allStats) {
->>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
         res.json(allStats);
       });
   });
 
   // Route for getting all user challenge data from database
-<<<<<<< HEAD
   app.get("/api/all-stats", (req, res) => {
     db.allChallenges.findAll({}).then(allStats => {
-=======
-  app.get("/api/all-stats", function(req, res) {
-    db.allChallenges.findAll({}).then(function(allStats) {
->>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
       // console.log(allStats);
       res.json(allStats);
 
       // Maps all database information
-<<<<<<< HEAD
       const newArray = allStats.map(x => x.dataValues);
 
       // Filters out all data with RUN
-      const filterArray = newArray.filter(y => {
-=======
-      var newArray = allStats.map((x) => x.dataValues);
-
-      // Filters out all data with RUN
-      var filterArray = newArray.filter(function(y) {
->>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
-        return y.challenge === "run";
-      });
+      // const filterArray = newArray.filter(y => {
+      //   return y.challenge === "run";
+      // });
 
       // Filter out all data with WALK
-<<<<<<< HEAD
       const filterArrayUserId = newArray.filter(z => {
-=======
-      var filterArrayUserId = newArray.filter(function(z) {
->>>>>>> 2fa830acb5aedf3446f15917abfae24d09831de0
         return z.UserId === 8;
       });
 

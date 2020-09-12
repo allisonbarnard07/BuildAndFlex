@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-irregular-whitespace
 // Requiring our models and passport as we've configured it​
 const db = require("../models");
 const passport = require("../config/passport");
@@ -60,31 +61,37 @@ module.exports = function(app) {
         steps: req.body.steps,
         UserId: req.body.id
       })
-      .then(allStats => {
-        res.json(allStats);
+      .then(walking => {
+        res.json(walking);
       });
   });
 
   // Route for getting all user challenge data from database
-  app.get("/api/all-stats", (req, res) => {
-    db.allChallenges.findAll({}).then(allStats => {
+  // app.get("/api/all-stats", (req, res) => {
+  //   db.allChallenges.findAll({}).then(allStats => {
+  //     // console.log(allStats);
+  //     res.json(allStats);
+
+  app.get("/api/walking", (req, res) => {
+    db.allChallenges.findAll({}).then(walking => {
       // console.log(allStats);
-      res.json(allStats);
+      res.json(walking);
 
-      // Maps all database information
-      const newArray = allStats.map(x => x.dataValues);
+      //   // Maps all database information
+      //   const newArray = allStats.map(x => x.dataValues);
 
-      // Filters out all data with RUN
-      const filterArray = newArray.filter(y => {
-        return y.challenge === "run";
-      });
+      //   // Filters out all data with RUN
+      //   // const filterArray = newArray.filter(y => {
+      //   //   return y.challenge === "run";
+      //   // });
 
-      // Filter out all data with WALK
-      const filterArrayUserId = newArray.filter(z => {
-        return z.UserId === 8;
-      });
+      //   // Filter out all data with WALK
+      //   const filterArrayUserId = newArray.filter(y => {
+      //     return y.UserId === 8;
+      //   });
+      // });
+
+      // console.log(filterArrayUserId);
     });
-
-    console.log(filterArrayUserId);
   });
 };

@@ -7,10 +7,11 @@ $(document).ready(() => {
   });
   // This file just does a GET request to figure out which user is logged in
   // and render the challenge info in to the page
-  $.get("/api/all-stats").then(data => {
-    $("#goal").val(data.goal);
-    $("#duration").val(data.duration);
-    $("#miles").val(data.miles);
-    $("#steps").val(data.steps);
+  $.get("/api/walking").then(data => {
+    console.log(data);
+    $("#goal").append(data[data.length-1].goal);
+    $("#duration").append(data[data.length-1].duration);
+    $("#miles").append(data[data.length-1].miles);
+    $("#steps").append(data[data.length-1].steps);
   });
 });

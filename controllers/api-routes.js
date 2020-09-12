@@ -50,7 +50,7 @@ module.exports = function(app) {
   });
 
   // Route for posting all user challenge data to database
-  app.post("/api/user-data", (req, res) => {
+  app.post("/api/walking", (req, res) => {
     // console.log(req.body);
     db.allChallenges
       .create({
@@ -59,7 +59,7 @@ module.exports = function(app) {
         miles: req.body.miles,
         duration: req.body.duration,
         steps: req.body.steps,
-        UserId: req.body.id
+        UserId: req.body.UserId
       })
       .then(walking => {
         res.json(walking);

@@ -28,11 +28,7 @@ $(document).ready(() => {
       goal: goal,
       duration: duration,
       miles: miles
-<<<<<<< HEAD
-    }).then(data => {
-=======
     }).then(userData => {
->>>>>>> 8998c21e2f2aa0ddb68db18be2ef53d620a8de99
       window.location.replace("/profile");
       // If there's an error, handle it by throwing up a bootstrap alert
     });

@@ -1,14 +1,8 @@
 // Requiring necessary npm packages
-<<<<<<< HEAD
-var express = require("express");
-var session = require("express-session");
-var hbs = require("express-handlebars");
-=======
 const express = require("express");
 const session = require("express-session");
 const handlebars = require("express-handlebars");
 const path = require("path");
->>>>>>> 8998c21e2f2aa0ddb68db18be2ef53d620a8de99
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 

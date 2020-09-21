@@ -3,6 +3,8 @@ const express = require("express");
 const session = require("express-session");
 const handlebars = require("express-handlebars");
 const path = require("path");
+const compression = require("compression");
+
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 
@@ -33,6 +35,9 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+// d
+app.use(compression());
 
 // Import routes and give the server access to them.
 require("./controllers/html-routes.js")(app);

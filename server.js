@@ -36,7 +36,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// d
 app.use(compression());
 
 // Import routes and give the server access to them.
